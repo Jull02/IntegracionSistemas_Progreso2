@@ -39,6 +39,7 @@ docker build -t solicitudservice:1.0 .
 ```bash
 cd k8s/
 kubectl apply -f .
+kubectl port-forward -n istio-system svc/istio-ingressgateway 8080:80
 ```
 
 > Asegúrate de tener activo el tunnel: `minikube tunnel`
