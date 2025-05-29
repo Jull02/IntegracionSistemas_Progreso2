@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: solicitudservice
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: solicitudservice
+  template:
+    metadata:
+      labels:
+        app: solicitudservice
+    spec:
+      containers:
+        - name: solicitudservice
+          image: solicitudservice:1.0
+          ports:
+            - containerPort: 8000

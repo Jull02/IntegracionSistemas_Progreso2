@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: solicitudservice
+spec:
+  selector:
+    app: solicitudservice
+  ports:
+    - port: 80
+      targetPort: 8000

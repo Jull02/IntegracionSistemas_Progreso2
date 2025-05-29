@@ -1,0 +1,15 @@
+apiVersion: networking.istio.io/v1beta1
+kind: Gateway
+metadata:
+  name: solicitudservice-gateway
+  namespace: default
+spec:
+  selector:
+    istio: ingressgateway  # Usa el gateway predeterminado de Istio
+  servers:
+    - port:
+        number: 80
+        name: http
+        protocol: HTTP
+      hosts:
+        - "*"
